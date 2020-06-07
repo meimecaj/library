@@ -116,9 +116,9 @@ export default function PersistentDrawerLeft(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title} noWrap>
-            Library
+            <Link style={{ textDecoration: 'none', color: 'white' }} to="/">Library</Link>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit"><Link style={{ textDecoration: 'none', color: 'white' }} to="/login-page">Login</Link></Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -135,29 +135,23 @@ export default function PersistentDrawerLeft(props) {
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
             ) : (
-              <ChevronRightIcon />
-            )}
+                <ChevronRightIcon />
+              )}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          {["Categories"].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {["Login", "About"].map((text, index) => (
+          {["About"].map((text, index) => (
             <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none', color: 'black' }}>
               <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             </Link>
