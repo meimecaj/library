@@ -76,12 +76,12 @@ export default function HomePage() {
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
-                    Main call to action
+                    Home / Nderroje
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
+                  <Button variant="outlined" color="primary" href="/login-page">
+                    Log in
                   </Button>
                 </Grid>
               </Grid>
