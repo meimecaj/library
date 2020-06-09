@@ -141,7 +141,7 @@ export default function PersistentDrawerLeft(props) {
         </div>
         <Divider />
         <List>
-          {["Categories"].map((text, index) => (
+          {["Biography", "Classics", "Fiction", "History and Politics", "Lifestyle", "Poems", "Science", "Science-Fiction", "Traveling and Geography"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
@@ -149,13 +149,9 @@ export default function PersistentDrawerLeft(props) {
         </List>
         <Divider />
         <List>
-          {["About"].map((text, index) => (
-            <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none', color: 'black' }}>
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            </Link>
-          ))}
+        <ListItem button>
+            <ListItemText primary="Search by Author" />
+          </ListItem>
         </List>
       </Drawer>
       <main
