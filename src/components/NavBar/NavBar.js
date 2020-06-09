@@ -149,13 +149,9 @@ export default function PersistentDrawerLeft(props) {
         </List>
         <Divider />
         <List>
-          {["Search by Author"].map((text, index) => (
-            <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none', color: 'black' }}>
-              <ListItem button key={text}>
-                <ListItemText primary={text} />
-              </ListItem>
-            </Link>
-          ))}
+        <ListItem button>
+            <ListItemText primary="Search by Author" />
+          </ListItem>
         </List>
       </Drawer>
       <main
