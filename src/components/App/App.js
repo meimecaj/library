@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import NavBar from "../NavBar/NavBar";
 import LoginPage from "../LoginPage/LoginPage";
+import SignupPage from "../SignupPage/SignupPage";
 import About from "../About/About";
 import HomePage from "../HomePage/HomePage";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -25,6 +26,9 @@ function App() {
               </Route>
               <Route path="/login-page">
                 <LoginPage />
+              </Route>
+              <Route path="/signup-page">
+                <SignupPage />
               </Route>
             </Switch>
           </NavBar>
