@@ -10,6 +10,11 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
+import LocalStorage from "../../services/LocalStorage";
+import { Redirect } from "react-router-dom";
+
+const localStorage = new LocalStorage();
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -66,6 +71,23 @@ export default function SignupPage() {
 
   const [confirmPasswordHasError, setConfirmPasswordHasError] = useState(false);
   const [confirmPasswordErrorText, setConfirmPasswordErrorText] = useState("");
+
+  const [redirectLink, setRedirectLink] = useState("/signup-page");
+
+  const handleSignUp = () => {
+    const userData = {
+      name: `${firstName} ${lastName}`,
+      email: email,
+      password: encodePassword(email, password)
+    }
+
+    localStorage.set(email, userData);
+    setRedirectLink("/login-page");
+  }
+
+  const encodePassword = (username, password) => {
+    return btoa(`${username}:${password}`);
+  }
 
   const handleEmailChange = (event) => {
     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -142,6 +164,7 @@ export default function SignupPage() {
 
   return (
     <Container component="main" maxWidth="xs">
+      <Redirect to={redirectLink}/>
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -232,6 +255,7 @@ export default function SignupPage() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleSignUp}
           >
             Sign Up
           </Button>
