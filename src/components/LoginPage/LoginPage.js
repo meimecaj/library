@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -12,6 +10,11 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+import LocalStorage from "../../services/LocalStorage";
+import { Redirect } from "react-router-dom";
+
+const localStorage = new LocalStorage();
 
 function Copyright() {
   return (
@@ -49,8 +52,66 @@ const useStyles = makeStyles((theme) => ({
 export default function LoginPage() {
   const classes = useStyles();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [passwordHasError, setPasswordHasError] = useState(false);
+  const [passwordErrorText, setPasswordErrorText] = useState("");
+
+  const [emailHasError, setEmailHasError] = useState(false);
+  const [emailErrorText, setEmailErrorText] = useState("");
+
+  const [redirectLink, setRedirectLink] = useState("/login-page");
+
+  const handleLogIn = event => {
+    event.preventDefault();
+    const userToBeLoggedIn = localStorage.get(email);
+    
+    if (userToBeLoggedIn.password === localStorage.encodePassword(email, password)) {
+      const isLoggedInData = {
+        isLoggedIn: true,
+        userData: userToBeLoggedIn
+      };
+      localStorage.set("isLoggedIn", isLoggedInData);
+      setRedirectLink("/");
+    } else {
+      alert("Incorrect email or password!");
+    }
+  }
+
+  const handleEmailChange = (event) => {
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!regex.test(event.target.value)) {
+      setEmailErrorText("Email not valid.");
+      setEmailHasError(true);
+      setEmail(event.target.value);
+    } else {
+      setEmailErrorText("");
+      setEmailHasError(false);
+      setEmail(event.target.value);
+    }
+  };
+
+  const handlePasswordChange = (event) => {
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const password = event.target.value;
+
+    if (!regex.test(password)) {
+      setPasswordHasError(true);
+      setPasswordErrorText("Password not valid.");
+      setPassword(password);
+    } else {
+      setPasswordHasError(false);
+      setPasswordErrorText("");
+      setPassword(password);
+    }
+  };
+
+
   return (
     <Container component="main" maxWidth="xs">
+      <Redirect to={redirectLink} />
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -70,6 +131,10 @@ export default function LoginPage() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={handleEmailChange}
+            error={emailHasError}
+            helperText={emailErrorText}
+            value={email}
           />
           <TextField
             variant="outlined"
@@ -81,10 +146,10 @@ export default function LoginPage() {
             type="password"
             id="password"
             autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            onChange={handlePasswordChange}
+            error={passwordHasError}
+            helperText={passwordErrorText}
+            value={password}
           />
           <Button
             type="submit"
@@ -92,6 +157,7 @@ export default function LoginPage() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleLogIn}
           >
             Sign In
           </Button>

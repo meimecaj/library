@@ -15,21 +15,28 @@ export default class LocalStorage {
     }
   }
 
-  get = (key) => {
-    if (localStorage.getItem(key)) {
+  get = key => {
+    if (this.itemExists(key))
       return JSON.parse(localStorage.getItem(key));
-    }
   };
 
   set = (key, item) => {
     localStorage.setItem(key, JSON.stringify(item));
   };
 
-  remove = (key) => {
+  remove = key => {
     localStorage.removeItem(key);
   };
 
   nuke = () => {
     localStorage.clear();
   };
+
+  itemExists = itemKey => {
+    return (localStorage.getItem(itemKey)) ? true : false;
+  }
+
+  encodePassword = (username, password) => {
+    return btoa(`${username}:${password}`);
+  }
 }

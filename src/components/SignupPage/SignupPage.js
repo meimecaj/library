@@ -78,15 +78,11 @@ export default function SignupPage() {
     const userData = {
       name: `${firstName} ${lastName}`,
       email: email,
-      password: encodePassword(email, password)
+      password: localStorage.encodePassword(email, password)
     }
 
     localStorage.set(email, userData);
     setRedirectLink("/login-page");
-  }
-
-  const encodePassword = (username, password) => {
-    return btoa(`${username}:${password}`);
   }
 
   const handleEmailChange = (event) => {
