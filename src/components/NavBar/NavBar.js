@@ -17,6 +17,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
 
 import { Link } from "react-router-dom";
+import routes from "../../utils/routes";
 
 const drawerWidth = 240;
 
@@ -92,6 +93,8 @@ export default function PersistentDrawerLeft(props) {
     setOpen(false);
   };
 
+  const linkStyleRemover = { textDecoration: "none", color: "white" };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -112,9 +115,18 @@ export default function PersistentDrawerLeft(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title} noWrap>
-            <Link style={{ textDecoration: 'none', color: 'white' }} to="/">Library</Link>
+            <Link style={linkStyleRemover} to="/">
+              Library
+            </Link>
           </Typography>
-          <Button color="inherit"><Link style={{ textDecoration: 'none', color: 'white' }} to="/login-page">Login</Link></Button>
+          <Button color="inherit">
+            <Link
+              style={linkStyleRemover}
+              to="/login-page"
+            >
+              Login
+            </Link>
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -131,21 +143,26 @@ export default function PersistentDrawerLeft(props) {
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
             ) : (
-                <ChevronRightIcon />
-              )}
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {["Biography", "Classics", "Fiction", "History and Politics", "Lifestyle", "Poems", "Science", "Science-Fiction", "Traveling and Geography"].map((text, index) => (
-            <ListItem button key={text} >
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {routes.map((routeItem, index) => {
+            if(routeItem.name)
+              return(
+                <Link to={routeItem.path} style={{textDecoration: "none", color: "black"}}>
+                  <ListItem button key={routeItem.name}>
+                      <ListItemText primary={routeItem.name} />
+                  </ListItem>
+                </Link>
+              );
+          })}
         </List>
         <Divider />
         <List>
-        <ListItem button>
+          <ListItem button>
             <ListItemText primary="Search by Author" />
           </ListItem>
         </List>
