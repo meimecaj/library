@@ -8,6 +8,7 @@ import theme from "../../utils/theme";
 import routes from "../../utils/routes";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import DrawerItem from "../DrawerItem/DrawerItem";
 
 function App() {
   return (
@@ -22,7 +23,10 @@ function App() {
               {routes.map((routeItem) => {
                 return (
                   <Route path={routeItem.path}>
-                    {React.createElement(routeItem.component, null)}
+                    <DrawerItem
+                      title={routeItem.name}
+                      cards={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+                    />
                   </Route>
                 );
               })}
