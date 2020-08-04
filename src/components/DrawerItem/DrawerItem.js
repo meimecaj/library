@@ -11,6 +11,13 @@ import Container from "@material-ui/core/Container";
 
 import useStyles from "./drawerItemStyle";
 
+/* 
+  1) do merret emri i kategorise (me hapesira)
+  2) do merret nga lokal storazh atributi perkates sipas kategorise (duke kerkuar tek emri me substring or smth like that)
+  3) do hidhet ne nje variabel permbajtja e kategorise
+  4) do map-ohet dhe do shfaqet si Card tek faqja.
+*/
+
 export default function DrawerItem(props) {
   const classes = useStyles();
 

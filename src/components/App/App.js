@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import NavBar from "../NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
@@ -11,8 +11,21 @@ import routes from "../../utils/routes";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import DrawerItem from "../DrawerItem/DrawerItem";
+import LocalStorage from "../../services/LocalStorage";
+import categories from "../../utils/categories";
+
+const localStorage = new LocalStorage();
+
+const addAllBooks = () => {
+  localStorage.set("books", categories);
+}
 
 function App() {
+
+  useEffect(() => {
+    addAllBooks();
+  });
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
