@@ -4,6 +4,7 @@ import NavBar from "../NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../SignupPage/SignupPage";
+import Footer from "../Footer/Footer";
 import { ThemeProvider } from "@material-ui/core/styles";
 
 import theme from "../../utils/theme";
@@ -52,6 +53,7 @@ function App() {
                 );
               })}
             </Switch>
+            <Footer />
           </NavBar>
         </Router>
       </ThemeProvider>
