@@ -2,12 +2,12 @@ const routes = [
     {
         path: "/about",
     },
-    {
-        path: "/login-page",
-    },
-    {
-        path: "/signup-page",
-    },
+    // {
+    //     path: "/login-page",
+    // },
+    // {
+    //     path: "/signup-page",
+    // },
     {
         path: "/biography",
         name: "Biography"

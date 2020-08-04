@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import NavBar from "../NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
+import LoginPage from "../LoginPage/LoginPage";
+import SignupPage from "../SignupPage/SignupPage";
 import { ThemeProvider } from "@material-ui/core/styles";
 
 import theme from "../../utils/theme";
@@ -19,6 +21,12 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <HomePage />
+              </Route>
+              <Route path="/login-page">
+                <LoginPage />
+              </Route>
+              <Route path="/signup-page">
+                <SignupPage />
               </Route>
               {routes.map((routeItem) => {
                 return (

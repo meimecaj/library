@@ -143,18 +143,18 @@ export default function PersistentDrawerLeft(props) {
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
             ) : (
-              <ChevronRightIcon />
-            )}
+                <ChevronRightIcon />
+              )}
           </IconButton>
         </div>
         <Divider />
         <List>
           {routes.map((routeItem, index) => {
-            if(routeItem.name)
-              return(
-                <Link to={routeItem.path} style={{textDecoration: "none", color: "black"}}>
+            if (routeItem.name)
+              return (
+                <Link to={routeItem.path} style={{ textDecoration: "none", color: "black" }}>
                   <ListItem button key={routeItem.name}>
-                      <ListItemText primary={routeItem.name} />
+                    <ListItemText primary={routeItem.name} />
                   </ListItem>
                 </Link>
               );
@@ -164,6 +164,12 @@ export default function PersistentDrawerLeft(props) {
         <List>
           <ListItem button>
             <ListItemText primary="Search by Author" />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem button>
+            <Link to="/about"></Link>
+            <ListItemText primary="About" />
           </ListItem>
         </List>
       </Drawer>
