@@ -3,12 +3,6 @@ const routes = [
         path: "/about",
     },
     {
-        path: "/login-page",
-    },
-    {
-        path: "/signup-page",
-    },
-    {
         path: "/biography",
         name: "Biography"
     },
@@ -42,7 +36,7 @@ const routes = [
     },
     {
         path: "/travelling-and-geography",
-        name: "Traveling and Geography"
+        name: "Traveling and Geography" 
     },
 ];
 
