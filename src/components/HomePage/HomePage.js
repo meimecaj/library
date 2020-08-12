@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -13,19 +13,6 @@ import Link from '@material-ui/core/Link';
 import LocalStorage from "../../services/LocalStorage";
 
 const localStorage = new LocalStorage();
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="mailto:meimecaj@gmail.com">
-        Mei Meçaj
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -48,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '56.25%', // 16:9
   },
   cardContent: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -56,19 +43,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-let randomBooks = [];
-
 export default function HomePage() {
   const classes = useStyles();
 
-  useEffect(() => {
-    const tempBooks = localStorage.get("books");
+  const [randomBooks, setRandomBooks] = useState([]);
 
-    randomBooks = Object.keys(tempBooks).map(bookCategory => {
-      const aCategory = tempBooks[bookCategory];
+  useEffect(() => {
+    const books = localStorage.get("books");
+
+    const tempBooks = Object.keys(books).map(bookCategory => {
+      const aCategory = books[bookCategory];
       return aCategory[Math.floor(Math.random() * aCategory.length)];
     });
-  });
+
+    setRandomBooks(tempBooks);
+  }, []);
 
   if ((randomBooks.length > 0)) {
     return (
@@ -113,9 +102,9 @@ export default function HomePage() {
                       <Typography gutterBottom variant="h5" component="h2">
                         {book.title}
                       </Typography>
-                      <Typography>
-                        This is a media card. You can use this section to describe the content.
-                    </Typography>
+                      <Typography noWrap>
+                        {book.description}
+                      </Typography>
                     </CardContent>
                     <CardActions>
                       <Button size="small" color="primary">
@@ -131,15 +120,6 @@ export default function HomePage() {
             </Grid>
           </Container>
         </main>
-        <footer className={classes.footer}>
-          <Typography variant="h6" align="center" gutterBottom>
-            {/* Footer */}
-          </Typography>
-          <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          </Typography>
-          <Copyright />
-        </footer>
-        {/* End footer  */}
       </React.Fragment>
     );
   } return <div></div>
