@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
 import useStyles from "./drawerItemStyle";
+import categories from "../../utils/categories";
 
 /* 
   1) do merret emri i kategorise (me hapesira)
@@ -43,11 +44,11 @@ export default function DrawerItem(props) {
             {props.cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <CardMedia
+                  {/* <CardMedia
                     className={classes.cardMedia}
                     image="https://source.unsplash.com/random"
                     title="Image title"
-                  />
+                  /> */}
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Heading
