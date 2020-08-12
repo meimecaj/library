@@ -200,7 +200,7 @@ const categories = {
       year: "2015",
     },
   ],
-  scifi: [
+  scienceandfiction: [
     {
       author: "Ray Bradbury",
       description:
