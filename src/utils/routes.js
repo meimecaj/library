@@ -15,7 +15,7 @@ const routes = [
         name: "Fiction"
     },
     {
-        path: "/history-and-politics",
+        path: "/history-politics",
         name: "History and Politics"
     },
     {
@@ -35,7 +35,7 @@ const routes = [
         name: "Science"
     },
     {
-        path: "/travelling-and-geography",
+        path: "/travelling-geography",
         name: "Traveling and Geography" 
     },
 ];

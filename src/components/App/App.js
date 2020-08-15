@@ -16,6 +16,7 @@ import LocalStorage from "../../services/LocalStorage";
 import categories from "../../utils/categories";
 
 const localStorage = new LocalStorage();
+let books = [];
 
 const addAllBooks = () => {
   localStorage.set("books", categories);
@@ -44,12 +45,7 @@ function App() {
               </Route>
               {routes.map((routeItem) => {
                 return (
-                  <Route path={routeItem.path}>
-                    <DrawerItem
-                      title={routeItem.name}
-                      cards={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
-                    />
-                  </Route>
+                  <Route path={routeItem.path} component={() => <DrawerItem title={routeItem.name} />} />
                 );
               })}
             </Switch>
