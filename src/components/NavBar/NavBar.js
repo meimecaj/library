@@ -162,9 +162,11 @@ export default function PersistentDrawerLeft(props) {
         </List>
         <Divider />
         <List>
-          <ListItem button>
-            <ListItemText primary="Search by Author" />
-          </ListItem>
+          <Link to="/search-by-author" style={{ textDecoration: "none", color: "black" }}>
+            <ListItem button>
+              <ListItemText primary="Search by Author" />
+            </ListItem>
+          </Link>
         </List>
         <List>
           <ListItem button>

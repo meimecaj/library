@@ -11,12 +11,12 @@ import theme from "../../utils/theme";
 import routes from "../../utils/routes";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SearchByAuthor from "../SearchByAuthor/SearchByAuthor";
 import DrawerItem from "../DrawerItem/DrawerItem";
 import LocalStorage from "../../services/LocalStorage";
 import categories from "../../utils/categories";
 
 const localStorage = new LocalStorage();
-let books = [];
 
 const addAllBooks = () => {
   localStorage.set("books", categories);
@@ -42,6 +42,9 @@ function App() {
               </Route>
               <Route path="/signup-page">
                 <SignupPage />
+              </Route>
+              <Route path="/search-by-author">
+                <SearchByAuthor />
               </Route>
               {routes.map((routeItem) => {
                 return (
