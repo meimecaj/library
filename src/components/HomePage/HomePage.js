@@ -85,11 +85,11 @@ export default function HomePage() {
               {randomBooks.map((book) => (
                 <Grid item key={book.isbn} xs={12} sm={6} md={4}>
                   <Card className={classes.card}>
-                    {/* <CardMedia
+                    <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  /> */}
+                    // image={book.image}
+                    title={book.title}
+                  />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
                         {book.title}

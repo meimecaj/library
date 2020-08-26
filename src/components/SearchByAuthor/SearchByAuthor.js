@@ -66,7 +66,7 @@ const SearchByAuthor = () => {
     <div>
       <TextField
         id="standard-search"
-        label="Search field"
+        label="Search author"
         type="search"
         variant="outlined"
         onChange={handleSearchBarChange}

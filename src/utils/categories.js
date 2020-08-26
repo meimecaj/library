@@ -9,6 +9,7 @@ const categories = {
       pages: "432",
       title: "The Kennedy Curse",
       year: "2020",
+      image: "../utils/Images/Biography/the-kennedy-curse.jpg",
     },
     {
       author: "Hamish Mckenzie",
@@ -19,6 +20,7 @@ const categories = {
       pages: "304",
       title: "Insane Mode",
       year: "2020",
+      image: "../utils/Images/Biography/insane-mode.jpg",
     },
     {
       author: "Danny Fingeroth",
@@ -29,6 +31,7 @@ const categories = {
       pages: "400",
       title: "The Amazing Story of Stan Lee - A Marvelous Life",
       year: "2019",
+      image: "../utils/Images/Biography/the-amazing-story-of-stan-lee-a-marvelous-life.jpg",
     },
   ],
   classics: [
@@ -41,6 +44,7 @@ const categories = {
       pages: "288",
       title: "The Secret Agent",
       year: "2020",
+      image: "../utils/Images/Classics/the-secret-agent.jpg",
     },
     {
       author: "Albert Camus",
@@ -51,6 +55,7 @@ const categories = {
       pages: "256",
       title: "The Plague",
       year: "2020",
+      image: "../utils/Images/Classics/the-plague.jpg",
     },
     {
       author: "Niccolo Machiavelli",
@@ -61,6 +66,7 @@ const categories = {
       pages: "9781435163812",
       title: "The Prince",
       year: "2019",
+      image: "../utils/Images/Classics/the-prince.jpg",
     },
   ],
   fiction: [
@@ -73,6 +79,7 @@ const categories = {
       pages: "1112",
       title: "H. P. Lovecraft Complete Fiction",
       year: "2017",
+      image: "../utils/Images/Fiction/hp-lovecraft-complete-fiction.jpg",
     },
     {
       author: "Marie Lu",
@@ -83,6 +90,7 @@ const categories = {
       pages: "288",
       title: "Batman: Nightwalker",
       year: "2018",
+      image: "../utils/Images/Fiction/batman-nightwalker.jpg",
     },
     {
       author: "Michael Ende",
@@ -93,15 +101,7 @@ const categories = {
       pages: "528",
       title: "The Neverending Story",
       year: "2018",
-    },
-    {
-      author: "Cimi Nuries",
-      description: "Osh i liber.",
-      isbn: "9780141354977",
-      language: "English",
-      pages: "100",
-      title: "Goni Dhe Cimi Kacurrel",
-      year: "2020",
+      image: "../utils/Images/Fiction/the-neverending-story.jpg",
     },
   ],
   historyandpolitics: [
@@ -114,6 +114,7 @@ const categories = {
       pages: "560",
       title: "A Short History of World War II",
       year: "2020",
+      image: "../utils/Images/HistoryAndPolitics/world-war-ii.jpg",
     },
     {
       author: "Valerie Hansen",
@@ -124,6 +125,7 @@ const categories = {
       pages: "320",
       title: "The Year 1000",
       year: "2020",
+      image: "../utils/Images/HistoryAndPolitics/the-year-1000.jpg",
     },
     {
       author: "Dorling Kindersley",
@@ -134,6 +136,7 @@ const categories = {
       pages: " 512",
       title: "War - The Definitive Visual History.",
       year: "2020",
+      image: "../utils/Images/HistoryAndPolitics/war-the-definitive-visual-history.jpg",
     },
   ],
   lifestyle: [
@@ -190,14 +193,14 @@ const categories = {
       year: "2017",
     },
     {
-      author: "Dorling Kindersley",
+      author: "William Shakespeare",
       description:
         "This is the perfect study guide to the complete works of Shakespeare, covering everything from the romantic comedy of Romeo and Juliet to the tragedy Macbeth, alongside his Elizabethan history plays, sonnets, and other poemsWith detailed plot summaries and an in-depth analysis of the major characters and themes, this is a brilliant, innovative exploration of the entire canon of Shakespeare plays, sonnets and poetry, from the comedies of Twelfth Night and As You Like It to the tragedies of Julius Caesar and Hamlet, plus lost plays and lesser known works of poetry. Packed with witty illustrations and memorable quotes, The Shakespeare Book brings the Bard's best-loved characters and storylines to life, and explores all of his key themes and much-quoted phrases. Easy-to-understand graphics and illustrated timelines also offer an at-a-glance summary of each play. Whether you're a Shakespeare scholar, a student of the great Bard, or simply someone who wants to learn more, The Shakespeare Book offers a fuller appreciation of his phenomenal talent and the lasting legacy of his plays and poetry.",
-      isbn: "9780241182611",
+      isbn: "9781435141834",
       language: "English",
-      pages: " 352",
-      title: "Thank you for arguing.",
-      year: "2015",
+      pages: "1200",
+      title: "Complete Plays Of Shakespeare",
+      year: "2018",
     },
   ],
   scienceandfiction: [
