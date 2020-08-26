@@ -9,7 +9,7 @@ const categories = {
       pages: "432",
       title: "The Kennedy Curse",
       year: "2020",
-      image: "../utils/Images/Biography/the-kennedy-curse.jpg",
+      image: "Images/Biography/the-kennedy-curse.jpg",
     },
     {
       author: "Hamish Mckenzie",
@@ -20,7 +20,7 @@ const categories = {
       pages: "304",
       title: "Insane Mode",
       year: "2020",
-      image: "../utils/Images/Biography/insane-mode.jpg",
+      image: "Images/Biography/insane-mode.jpg",
     },
     {
       author: "Danny Fingeroth",
@@ -31,7 +31,7 @@ const categories = {
       pages: "400",
       title: "The Amazing Story of Stan Lee - A Marvelous Life",
       year: "2019",
-      image: "../utils/Images/Biography/the-amazing-story-of-stan-lee-a-marvelous-life.jpg",
+      image: "Images/Biography/the-amazing-story-of-stan-lee-a-marvelous-life.jpg",
     },
   ],
   classics: [
@@ -44,7 +44,7 @@ const categories = {
       pages: "288",
       title: "The Secret Agent",
       year: "2020",
-      image: "../utils/Images/Classics/the-secret-agent.jpg",
+      image: "Images/Classics/the-secret-agent.jpg",
     },
     {
       author: "Albert Camus",
@@ -55,7 +55,7 @@ const categories = {
       pages: "256",
       title: "The Plague",
       year: "2020",
-      image: "../utils/Images/Classics/the-plague.jpg",
+      image: "Images/Classics/the-plague.jpg",
     },
     {
       author: "Niccolo Machiavelli",
@@ -66,7 +66,7 @@ const categories = {
       pages: "9781435163812",
       title: "The Prince",
       year: "2019",
-      image: "../utils/Images/Classics/the-prince.jpg",
+      image: "Images/Classics/the-prince.jpg",
     },
   ],
   fiction: [
@@ -79,7 +79,7 @@ const categories = {
       pages: "1112",
       title: "H. P. Lovecraft Complete Fiction",
       year: "2017",
-      image: "../utils/Images/Fiction/hp-lovecraft-complete-fiction.jpg",
+      image: "Images/Fiction/hp-lovecraft-complete-fiction.jpg",
     },
     {
       author: "Marie Lu",
@@ -90,7 +90,7 @@ const categories = {
       pages: "288",
       title: "Batman: Nightwalker",
       year: "2018",
-      image: "../utils/Images/Fiction/batman-nightwalker.jpg",
+      image: "Images/Fiction/batman-nightwalker.jpg",
     },
     {
       author: "Michael Ende",
@@ -101,7 +101,7 @@ const categories = {
       pages: "528",
       title: "The Neverending Story",
       year: "2018",
-      image: "../utils/Images/Fiction/the-neverending-story.jpg",
+      image: "Images/Fiction/the-neverending-story.jpg",
     },
   ],
   historyandpolitics: [
@@ -114,7 +114,7 @@ const categories = {
       pages: "560",
       title: "A Short History of World War II",
       year: "2020",
-      image: "../utils/Images/HistoryAndPolitics/world-war-ii.jpg",
+      image: "Images/HistoryAndPolitics/world-war-ii.jpg",
     },
     {
       author: "Valerie Hansen",
@@ -125,7 +125,7 @@ const categories = {
       pages: "320",
       title: "The Year 1000",
       year: "2020",
-      image: "../utils/Images/HistoryAndPolitics/the-year-1000.jpg",
+      image: "Images/HistoryAndPolitics/the-year-1000.jpg",
     },
     {
       author: "Dorling Kindersley",
@@ -136,7 +136,7 @@ const categories = {
       pages: " 512",
       title: "War - The Definitive Visual History.",
       year: "2020",
-      image: "../utils/Images/HistoryAndPolitics/war-the-definitive-visual-history.jpg",
+      image: "Images/HistoryAndPolitics/war-the-definitive-visual-history.jpg",
     },
   ],
   lifestyle: [

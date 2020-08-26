@@ -87,7 +87,7 @@ export default function HomePage() {
                   <Card className={classes.card}>
                     <CardMedia
                     className={classes.cardMedia}
-                    // image={book.image}
+                    image={book.image}
                     title={book.title}
                   />
                     <CardContent className={classes.cardContent}>
