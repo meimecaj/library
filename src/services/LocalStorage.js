@@ -1,16 +1,8 @@
-const LSCheck = () => {
-  try {
-    localStorage.setItem("test", "test");
-    localStorage.removeItem("test");
-    return true;
-  } catch (e) {
-    return false;
-  }
-};
+import LSC from "./LocalStorageCheck";
 
 export default class LocalStorage {
   constructor() {
-    if (!LSCheck()) {
+    if (!LSC.LocalStorageCheck()) {
       alert("The localstorage is not available!");
     }
   }
@@ -18,6 +10,7 @@ export default class LocalStorage {
   get = key => {
     if (this.itemExists(key))
       return JSON.parse(localStorage.getItem(key));
+    return null;
   };
 
   set = (key, item) => {
