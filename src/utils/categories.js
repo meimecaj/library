@@ -94,15 +94,6 @@ const categories = {
       title: "The Neverending Story",
       year: "2018",
     },
-    {
-      author: "Cimi Nuries",
-      description: "Osh i liber.",
-      isbn: "9780141354977",
-      language: "English",
-      pages: "100",
-      title: "Goni Dhe Cimi Kacurrel",
-      year: "2020",
-    },
   ],
   historyandpolitics: [
     {

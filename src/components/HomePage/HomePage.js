@@ -43,12 +43,14 @@ export default function HomePage() {
   useEffect(() => {
     const books = localStorage.get("books");
 
-    const tempBooks = Object.keys(books).map(bookCategory => {
-      const aCategory = books[bookCategory];
-      return aCategory[Math.floor(Math.random() * aCategory.length)];
-    });
-
-    setRandomBooks(tempBooks);
+    if(books !== null) {
+      const tempBooks = Object.keys(books).map(bookCategory => {
+        const aCategory = books[bookCategory];
+        return aCategory[Math.floor(Math.random() * aCategory.length)];
+      });
+  
+      setRandomBooks(tempBooks);
+    }
   }, []);
 
   if ((randomBooks.length > 0)) {
